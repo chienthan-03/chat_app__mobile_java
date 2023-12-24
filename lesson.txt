@@ -1,0 +1,84 @@
+1. Add build.gradle.kts (Module)
+	buildFeatures {
+	        viewBinding = true
+	}
+	// Đơn vị kích thước có thể mở rộng (hỗ trợ cho các kích thước màn hình khác nhau)
+	implementation("com.intuit.sdp:sdp-android:1.1.0")
+	implementation("com.intuit.ssp:ssp-android:1.1.0")
+
+	// Chế độ xem hình ảnh tròn
+	implementation("com.makeramen:roundedimageview:2.3.0")
+
+2. Add colors.xml
+	<?xml version="1.0" encoding="utf-8"?>
+	<resources>
+		<color name="primary">#1C2E46</color>
+		<color name="primary_dark">#142232</color>
+		<color name="primary_text">#212121</color>
+		<color name="secondary_text">#757575</color>
+		<color name="white">#FFFFFF</color>
+		<color name="input_background">#ECECEC</color>
+		<color name="icon_background">#20FFFFFF</color>
+		<color name="error">#B00020</color>
+		<color name="received_message_background">#090D16</color>
+	</resources>
+
+3. Add themes.xml
+	<resources xmlns:tools="http://schemas.android.com/tools">
+		<style name="Base.Theme.ChatApp" parent="Theme.Material3.DayNight.NoActionBar">
+			<item name="colorPrimary">@color/primary</item>
+			<item name="android:statusBarColor">@color/primary</item>
+		</style>
+	</resources>
+
+4. Add themes.xml (night)
+	<resources xmlns:tools="http://schemas.android.com/tools">
+		<style name="Base.Theme.ChatApp" parent="Theme.Material3.DayNight.NoActionBar">
+			<item name="colorPrimary">@color/primary</item>
+			<item name="android:statusBarColor">@color/primary</item>
+		</style>
+	</resources>
+
+5. Create background tròn
+	<?xml version="1.0" encoding="utf-8"?>
+	<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+		<solid android:color="@color/input_background" />
+	</shape>
+
+6. Create background bo tròn
+	<?xml version="1.0" encoding="utf-8"?>
+	<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+		<solid android:color="@color/input_background"/>
+		<corners android:radius="@dimen/_8sdp"/>
+	</shape>
+
+7. Add AndroidMainfest
+	android:windowSoftInputMode="adjustResize": Là một cách để điều chỉnh kích thức giao diện bàn phím ảo xuất hiện
+
+8. Create cloud
+	https://console.firebase.google.com/
+
+9. Add build.gradle.kts (Project)
+	id("com.google.gms.google-services") version "4.3.15" apply false
+
+10. Add build.gradle.kts (Module)
+	id("com.google.gms.google-services")
+
+11. Set up Firebase Cloud Messaging
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
